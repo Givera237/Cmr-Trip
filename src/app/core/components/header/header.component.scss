@@ -1,0 +1,53 @@
+
+  .barre_haut
+  {
+    position: absolute;
+    width: 1440px;
+    height: 33px;
+    left: 0px;
+    top: 0px;
+    background: #0E6F46;
+  }
+
+
+  .lien_navigation
+  {
+    position: absolute;
+    width: 1168px;
+    height: 76px;
+    left: 190px;
+    top: 10px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 40;
+    font-size: 30px;
+    line-height: 28px;
+
+    color: #000000;
+
+  }
+
+  div
+  {
+    margin-left: 50px;
+  }
+  ul li
+  {
+  
+   
+   margin-left: 150px;
+   
+  }
+  
+
+  nav
+  {
+    background-color: #0E6F46;
+  }
+
+  a
+  {
+    color: white;
+    word-spacing: 100px;
+  }
