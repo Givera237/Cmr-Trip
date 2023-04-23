@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { NgImageSliderComponent } from 'ng-image-slider/public_api';
-import { Image } from '../../models/images';
+
 @Component({
   selector: 'app-defile-image',
   templateUrl: './defile-image.component.html',
@@ -8,25 +7,38 @@ import { Image } from '../../models/images';
 })
 export class DefileImageComponent
  {
-    image!: Image[];
-    ngOnInit ()
-    {
-      this.image = 
-      [
-        {
-          imageUrl : 'C:\Users\CUSTOMER PC\Cmr-Trip\src\app\accueil\components\defile-image\Bimbia.jpeg'
-        },
-        {
-          imageUrl : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSe3MGwvIiNlV8l9AsSXwyory7Jg1-CYCiSA&usqp=CAU'
-        },
-        {
-          imageUrl : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpVrpEhUY92uxZ66-Es5xJLCvttJu5qRfgrw&usqp=CAU'
-        },
-        {
-          imageUrl : 'https://www.femmexpat.com/wp-content/uploads/2013/02/FemmExpat-OK-14.jpg'
-        },
-      ];
+  name = 'Angular';
+  image = [{
+      image: 'https://www.ouestmedias.net/wp-content/uploads/2022/12/-29.jpg',
+      thumbImage: 'https://www.ouestmedias.net/wp-content/uploads/2022/12/-29.jpg',
+      title: 'OUEST CAMEROUN'
+  }, {
+      image: 'https://www.cityzeum.com/images/wikimedia/kribi.webp?ezimgfmt=ngcb1/notWebP',
+      thumbImage: 'https://www.cityzeum.com/images/wikimedia/kribi.webp?ezimgfmt=ngcb1/notWebP',
+      title: 'Plage de KRIBI CAMEROUN'
+  }, {
+      image: 'https://content.r9cdn.net/rimg/dimg/86/3d/4e8a3494-ctry-42-16cd7eef08d.jpg?width=1366&height=768&xhint=1610&yhint=1173&crop=true',
+      thumbImage: 'https://content.r9cdn.net/rimg/dimg/86/3d/4e8a3494-ctry-42-16cd7eef08d.jpg?width=1366&height=768&xhint=1610&yhint=1173&crop=true',
+      title: 'KAYAK CAMEROUN'
+  },{
+      image: 'https://www.bouger-voyager.com/wp-content/uploads/2021/10/mont-cameroun.jpg',
+      thumbImage: 'https://www.bouger-voyager.com/wp-content/uploads/2021/10/mont-cameroun.jpg',
+      title: 'Mont CAMEROUN'
+  }, {
+      image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/1.jpg',
+      thumbImage: 'https://i.pinimg.com/originals/7a/49/58/7a49589989b9ff08597be225a6de57c7.jpg',
+      title: 'Site éco-touristique EBOGO'
+  }, {
+      image: 'https://www.bouger-voyager.com/wp-content/uploads/2021/10/ekom.jpg',
+      thumbImage: 'https://www.bouger-voyager.com/wp-content/uploads/2021/10/ekom.jpg',
+      title: 'Chute EKOM.'
+  },
+  {
+    image: 'https://discover-cameroon.com/wp-content/uploads/2021/02/Pouss-au-Cameroun.jpg',
+    thumbImage: 'https://discover-cameroon.com/wp-content/uploads/2021/02/Pouss-au-Cameroun.jpg',
+    title: 'RHUMSIKI CAMEROUN'
+}
+];
+}
 
-    }
-
- }
+ 
