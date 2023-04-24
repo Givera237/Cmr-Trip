@@ -25,7 +25,7 @@ export class DefileImageComponent
       thumbImage: 'https://www.bouger-voyager.com/wp-content/uploads/2021/10/mont-cameroun.jpg',
       title: 'Mont CAMEROUN'
   }, {
-      image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/1.jpg',
+      image: 'https://i.pinimg.com/originals/7a/49/58/7a49589989b9ff08597be225a6de57c7.jpg',
       thumbImage: 'https://i.pinimg.com/originals/7a/49/58/7a49589989b9ff08597be225a6de57c7.jpg',
       title: 'Site éco-touristique EBOGO'
   }, {
