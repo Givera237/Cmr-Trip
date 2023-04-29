@@ -1,22 +1,25 @@
+
+
+
+/*.position
+{
+    z-index : 2;
+}
+*/
+button
+{
+    position: absolute;
+    margin-left: 10px;
+    margin-top: -40px;
+    margin-bottom: 50px;
+}
 .defile
 {
 margin: auto;
 display:block ;
 margin-top: 10px;
 margin-bottom: 50px;
-height: 300px;
-width: 1200px; 
+height: 300px; 
 position: relative ;
 background:green ;
-}
-.position
-{
-    z-index : 2;
-}
-
-button
-{
-    margin-top: 10px;
-    margin-bottom: 50px;
-    z-index : 1;
 }

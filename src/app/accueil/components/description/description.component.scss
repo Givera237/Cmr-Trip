@@ -1,0 +1,44 @@
+.container{
+    margin-top: 50px;
+    margin-left: 0;
+}
+.redirect{margin-top: 10px;
+    margin-left: 10px;
+    position: absolute;
+}
+.image{
+    text-align: center;
+    /*background-color:rgb(247, 247, 11);*/
+    width: 1327px;
+    height: 400px;
+}
+.like{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 10px;
+    /*background-color: beige;*/
+    /*width: max-content;*/
+    position: absolute;
+}
+.like div{
+    margin-left: 10px;
+}
+.texte{
+    width: 1327px;
+    text-align: center;
+    background-color: beige;
+}
+p{
+    padding-top: 20px;
+}
+.bouton button{
+    margin-left: 90px;
+}
+.info button{
+    margin-left: 30px;
+}
+.urgence a{
+    margin-left: 30px;
+    font-family:serif;
+}

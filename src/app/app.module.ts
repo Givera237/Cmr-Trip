@@ -8,6 +8,8 @@ import { HeaderComponent } from './core/components/header/header.component';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { AccueilModule } from './accueil/accueil.module';
 import { DescriptionComponent } from './accueil/components/description/description.component';
+import { PublicationModule } from './publication/publication.module';
+import { FormulaireAjoutComponent } from './formulaire-ajout/formulaire-ajout.component';
 
 
 @NgModule({
@@ -17,13 +19,15 @@ import { DescriptionComponent } from './accueil/components/description/descripti
     HeaderComponent,
     FooterComponent,
     DescriptionComponent,
+    FormulaireAjoutComponent,
   ],
   imports: 
   [
     BrowserModule,
     AppRoutingModule,
     AccueilModule,
-    NgImageSliderModule
+    NgImageSliderModule,
+    PublicationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-description',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
 })
 export class DescriptionComponent 
 {
-
+ 
 }
