@@ -9,7 +9,8 @@ import { FooterComponent } from './core/components/footer/footer.component';
 import { AccueilModule } from './accueil/accueil.module';
 import { DescriptionComponent } from './accueil/components/description/description.component';
 import { PublicationModule } from './publication/publication.module';
-import { FormulaireAjoutComponent } from './formulaire-ajout/formulaire-ajout.component';
+import { FormulaireAjoutComponent } from './publication/components/formulaire-ajout/formulaire-ajout.component';
+import { AuthentificationModule } from './authentification/authentification.module';
 
 
 @NgModule({
@@ -18,8 +19,7 @@ import { FormulaireAjoutComponent } from './formulaire-ajout/formulaire-ajout.co
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    DescriptionComponent,
-    FormulaireAjoutComponent,
+    DescriptionComponent
   ],
   imports: 
   [
@@ -27,7 +27,8 @@ import { FormulaireAjoutComponent } from './formulaire-ajout/formulaire-ajout.co
     AppRoutingModule,
     AccueilModule,
     NgImageSliderModule,
-    PublicationModule
+    PublicationModule,
+    AuthentificationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

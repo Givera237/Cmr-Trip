@@ -1,31 +1,47 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component , OnInit } from '@angular/core';
+import { FormBuilder , FormGroup } from '@angular/forms';
+import { Observable, map } from 'rxjs';
+import { Site } from 'src/app/core/models/site';
+
 
 @Component({
   selector: 'app-formulaire-ajout',
   templateUrl: './formulaire-ajout.component.html',
   styleUrls: ['./formulaire-ajout.component.scss']
 })
-export class FormulaireAjoutComponent
- {
-  sitesForm!: FormGroup;
+export class FormulaireAjoutComponent implements OnInit{
+
+  sites!: FormGroup;
+  sitePreview$!: Observable<Site>;
   
-  constructor(private formBuilder : FormBuilder) {}
 
-  ngOnInit ()
-  {
-    this.sitesForm = this.formBuilder.group({
-      titre: [null],
-      contenu: [null],
-      adresse: [null],
-      type: [null],
-      categorie: [null],
-      region: [null],
-      ville: [null],
+  constructor(private formBuilder:FormBuilder) { }
 
-  });
+    ngOnInit(): void {
+      this.sites = this.formBuilder.group({
+          titre: [null],
+          contenu: [null],
+          imageUrl: [null],
+          adresse: [null],
+          type: [null],
+          region: [null],
+          ville: [null],
+          categorie: [null],
+          latitude: [null],
+          longitude: [null]
+      });
+     /* this.sitePreview$ = this.sites.valueChanges;*/
+      this.sitePreview$ = this.sites.valueChanges.pipe(
+        map(formValue =>({
+          ...formValue,
+          createDate: new Date()
+          
+        }))
+    );
   }
   onSubmitForm() {
-    console.log(this.sitesForm.value);
+    console.log(this.sites.value);
 }
-}
+  }
+
+

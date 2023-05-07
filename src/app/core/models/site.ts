@@ -9,4 +9,5 @@ longitude!: number;
 latitude!: number;
 actif!: number;
 id_ville!: number;
+imageUrl!: string
 }
