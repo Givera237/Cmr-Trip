@@ -7,7 +7,8 @@ import { AuthentificationGuard } from './core/guards/authentification.guard';
 
 const routes: Routes = 
 [
-  {path: '', component: AccueilComponent, canActivate :[AuthentificationGuard] },
+  {path: '', component: AccueilComponent },
+  {path: 'accueil', loadChildren: () => import('./accueil/accueil.module').then (m => m.AccueilModule) },
   {path : 'description', component: DescriptionComponent,  canActivate :[AuthentificationGuard]},
   {path : 'ajout', component: FormulaireAjoutComponent, canActivate :[AuthentificationGuard]}
 ];

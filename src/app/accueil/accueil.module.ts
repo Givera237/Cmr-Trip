@@ -5,10 +5,18 @@ import { DefileImageComponent } from './components/defile-image/defile-image.com
 import { SiteAccueilComponent } from './components/site-accueil/site-accueil.component';
 import { RouterModule } from '@angular/router';
 import { NgImageSliderModule } from 'ng-image-slider';
+import { SiteResolver } from './resolvers/site.resolver';
+import { SitesServices } from '../core/services/sites.services';
 
 
 
 @NgModule({
+
+  providers :
+  [
+    SitesServices,
+    SiteResolver
+  ],
   declarations: 
   [
     AccueilComponent,

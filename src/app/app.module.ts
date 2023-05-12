@@ -11,6 +11,7 @@ import { DescriptionComponent } from './accueil/components/description/descripti
 import { PublicationModule } from './publication/publication.module';
 import { FormulaireAjoutComponent } from './publication/components/formulaire-ajout/formulaire-ajout.component';
 import { AuthentificationModule } from './authentification/authentification.module';
+import { SiteListComponent } from './accueil/components/site-list/site-list.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AuthentificationModule } from './authentification/authentification.modu
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    SiteListComponent
   ],
   imports: 
   [
