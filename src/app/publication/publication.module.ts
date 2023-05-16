@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormulaireAjoutComponent } from './components/formulaire-ajout/formulaire-ajout.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PostsService } from './services/posts.services';
+import { PublicationRoutingModule } from './publication-routing.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { PostsService } from './services/posts.services';
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PublicationRoutingModule
   ],
   exports:[
     FormulaireAjoutComponent

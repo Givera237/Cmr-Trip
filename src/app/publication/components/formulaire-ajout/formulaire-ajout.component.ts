@@ -1,7 +1,7 @@
 import { Component , OnInit } from '@angular/core';
 import { FormBuilder , FormGroup } from '@angular/forms';
 import { Observable, map } from 'rxjs';
-import { Site } from 'src/app/core/models/site';
+import { post } from '../../models/post';
 
 
 @Component({
@@ -12,7 +12,7 @@ import { Site } from 'src/app/core/models/site';
 export class FormulaireAjoutComponent implements OnInit{
 
   sites!: FormGroup;
-  sitePreview$!: Observable<Site>;
+  sitePreview$!: Observable<post>;
   
 
   constructor(private formBuilder:FormBuilder) { }

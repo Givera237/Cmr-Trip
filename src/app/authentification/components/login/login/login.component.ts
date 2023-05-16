@@ -19,7 +19,7 @@ export class LoginComponent
   onLogin() : void
   {
     this.auth.login();
-    this.router.navigateByUrl('');
+    this.router.navigateByUrl('accueil/description');
   }
 
 }

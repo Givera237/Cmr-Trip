@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './accueil/components/accueil/accueil.component';
 import { DescriptionComponent } from './accueil/components/description/description.component';
-import { FormulaireAjoutComponent } from './publication/components/formulaire-ajout/formulaire-ajout.component';
-import { AuthentificationGuard } from './core/guards/authentification.guard';
+import { SiteListItemComponent } from './accueil/components/site-list-item/site-list-item.component';
+import { SiteListComponent } from './accueil/components/site-list/site-list.component';
+import { SiteResolver } from './accueil/resolvers/site.resolver';
 
 const routes: Routes = 
 [
-  {path: '', component: AccueilComponent },
   {path: 'accueil', loadChildren: () => import('./accueil/accueil.module').then (m => m.AccueilModule) },
-  {path : 'description', component: DescriptionComponent,  canActivate :[AuthentificationGuard]},
-  {path : 'ajout', component: FormulaireAjoutComponent, canActivate :[AuthentificationGuard]}
+  {path: 'publication', loadChildren: () => import('./publication/publication.module').then (m => m.PublicationModule) },
+   { path: '**', redirectTo: 'saccueil'}
 ];
 
 @NgModule({
