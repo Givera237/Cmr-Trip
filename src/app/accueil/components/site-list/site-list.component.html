@@ -1,2 +1,10 @@
 <h2>SITE</h2>
-<app-site-list-item *ngFor="let site of site$ | async"  [site]="site" >  </app-site-list-item>
+
+
+<div *ngIf="site">
+    {{ site }}
+  </div>
+
+  <div *ngIf="a">
+    <h2> {{a}} </h2>
+  </div>

@@ -14,7 +14,7 @@ import { Site } from './core/models/site';
 import { SiteAccueilComponent } from './accueil/components/site-accueil/site-accueil.component';
 import { SiteListComponent } from './accueil/components/site-list/site-list.component';
 import { SiteListItemComponent } from './accueil/components/site-list-item/site-list-item.component';
-import { ListeComponent } from './liste/liste.component';
+
 
 
 
@@ -22,8 +22,7 @@ import { ListeComponent } from './liste/liste.component';
 @NgModule({
   declarations:
    [
-    AppComponent,
-    ListeComponent,
+    AppComponent
   
  
   

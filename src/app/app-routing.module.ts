@@ -6,11 +6,12 @@ import { SiteListItemComponent } from './accueil/components/site-list-item/site-
 import { SiteListComponent } from './accueil/components/site-list/site-list.component';
 import { SiteResolver } from './accueil/resolvers/site.resolver';
 
+
 const routes: Routes = 
 [
   {path: 'accueil', loadChildren: () => import('./accueil/accueil.module').then (m => m.AccueilModule) },
   {path: 'publication', loadChildren: () => import('./publication/publication.module').then (m => m.PublicationModule) },
-   { path: '**', redirectTo: 'saccueil'}
+  { path: '**', redirectTo: 'saccueil'}
 ];
 
 @NgModule({
