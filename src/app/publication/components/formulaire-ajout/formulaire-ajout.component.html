@@ -12,18 +12,14 @@
             </textarea>
         </div>
         <div class="form-group">
-            <label for="imageUrl">URL de l'image</label>
-            <input id="imageUrl" type="text" formControlName="imageUrl">
-        </div>
-        <div class="form-group">
             <label for="adresse">Adresse</label>
             <input id="adresse" type="text" formControlName="adresse">
         </div>
-        <div class="form-group">
+       <!-- <div class="form-group">
             <label for="region">Region</label>
-            <!--<input id="region" type="text" formControlName="region">-->
-                <select id="region" type="text" formControlName="region" style="width: 50%;"><!--requetes back-->
-                    <option>Centre</option>
+            <input id="region" type="text" formControlName="region">
+                <select id="region" type="text" formControlName="region" style="width: 50%;"> --> <!--requetes back-->
+                   <!-- <option>Centre</option>
                     <option>Littoral</option>
                     <option>Est</option>
                     <option>Ouest</option>
@@ -34,14 +30,10 @@
                     <option>Sud-Ouest</option>
                     <option>Nord-Ouest</option>
                 </select>
-        </div>
+        </div> -->
         <div class="form-group">
             <label for="ville">Ville</label><!--requetes back-->
             <input id="ville" type="text" formControlName="ville">
-        </div>
-        <div class="form-group">
-            <label for="categorie">Categorie</label><!--requetes back-->
-            <input id="categorie" type="text" formControlName="categorie">
         </div>
         <div class="form-group">
             <label for="type">Type</label><!--requetes back-->
@@ -64,7 +56,7 @@
     <div class="site-view-card" *ngIf="sitePreview$ | async as sites">
         
         <!--<p>Mis en ligne {{ sites.createDate | date: 'à HH:mm, le d MMMM yyyy' }}</p>-->
-        <img [src]='sites.imageUrl' [alt]="sites.titre">
+       <!-- <img [src]='sites.imageUrl' [alt]="sites.titre">-->
         <h2>{{ sites.titre | uppercase }}</h2>
         <p>{{ sites.contenu }}</p>
         <p *ngIf="sites.adresse">Photo prise à {{ sites.adresse }}</p>

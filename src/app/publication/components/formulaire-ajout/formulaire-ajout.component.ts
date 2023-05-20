@@ -21,12 +21,12 @@ export class FormulaireAjoutComponent implements OnInit{
       this.sites = this.formBuilder.group({
           titre: [null],
           contenu: [null],
-          imageUrl: [null],
+          //imageUrl: [null],
           adresse: [null],
           type: [null],
-          region: [null],
+         // region: [null],
           ville: [null],
-          categorie: [null],
+          //categorie: [null],
           latitude: [null],
           longitude: [null]
       });

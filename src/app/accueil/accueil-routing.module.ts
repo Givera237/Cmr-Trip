@@ -10,7 +10,7 @@ import { SiteListItemComponent } from "./components/site-list-item/site-list-ite
 const routes: Routes =
 [
     {path: '', component: AccueilComponent },
-    {path : 'liste', component : SiteListComponent, resolve: {sites : SiteResolver }  },
+    {path : 'liste', component : SiteListComponent,/* resolve: {sites : SiteResolver }*/  },
     {path : 'description', component: DescriptionComponent,  /*canActivate :[AuthentificationGuard]*/},
     {path: 'item', component: SiteListItemComponent}
 ]

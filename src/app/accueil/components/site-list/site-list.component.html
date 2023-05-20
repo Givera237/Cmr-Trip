@@ -1,2 +1,11 @@
 <h2>SITE</h2>
-<app-site-list-item *ngFor="let site of site$ | async"  [site]="site" >  </app-site-list-item>
+<h1>List of Articles</h1>
+    <div *ngFor="let site of sites "> 
+        <p>{{ site.titre}} : {{ site.contenu }}</p>
+    </div>
+      
+        
+        
+    
+
+
