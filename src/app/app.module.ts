@@ -15,6 +15,7 @@ import { SiteAccueilComponent } from './accueil/components/site-accueil/site-acc
 import { SiteListComponent } from './accueil/components/site-list/site-list.component';
 import { SiteListItemComponent } from './accueil/components/site-list-item/site-list-item.component';
 import { ListeComponent } from './liste/liste.component';
+import { InscriptionComponent } from './authentification/components/inscription/inscription.component';
 
 
 
@@ -24,9 +25,7 @@ import { ListeComponent } from './liste/liste.component';
    [
     AppComponent,
     ListeComponent,
-  
- 
-  
+   
   ],
   imports: 
   [
@@ -34,7 +33,6 @@ import { ListeComponent } from './liste/liste.component';
     CoreModule,
     AppRoutingModule,
     NgImageSliderModule,
-    AuthentificationModule
   ],
   providers: [AccueilService],
   bootstrap: [AppComponent]

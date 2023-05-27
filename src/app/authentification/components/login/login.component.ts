@@ -22,4 +22,8 @@ export class LoginComponent
     this.router.navigateByUrl('accueil/description');
   }
 
+  onConnect()
+  {
+    this.router.navigateByUrl('authentification/inscription');
+  }
 }

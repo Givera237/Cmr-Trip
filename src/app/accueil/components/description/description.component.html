@@ -1,3 +1,5 @@
+<div  *ngIf="site$ | async as site">
+
 <div class="container">
     <div class="redirect">
         <span  [routerLink]="['/accueil']" class="btn btn-sm rounded-circle" style="background-color: coral;">
@@ -6,9 +8,9 @@
               </svg>
         </span>
     </div>
-    <div class="image">
-        image du site
+    <div class="image" *ngFor="let img of image" >
         
+        <img src="..\assets\{{img.path}}.jpg" alt=""  width=85% height=65%>
     </div>
     <div class="like">
         <div class="btn btn-sm">
@@ -24,7 +26,8 @@
         </div>
     </div>
     <div class="texte">
-       <p> Description...
+       <p> 
+        {{site.contenu}}
         </p>
     </div>
     <div class="bouton">
@@ -47,6 +50,6 @@
     </div>
 </div>
 
-
+</div>
 
 

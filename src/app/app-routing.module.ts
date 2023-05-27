@@ -10,7 +10,8 @@ const routes: Routes =
 [
   {path: 'accueil', loadChildren: () => import('./accueil/accueil.module').then (m => m.AccueilModule) },
   {path: 'publication', loadChildren: () => import('./publication/publication.module').then (m => m.PublicationModule) },
-   { path: '**', redirectTo: 'saccueil'}
+  {path: 'authentification', loadChildren: () => import('./authentification/authentification.module').then (m => m.AuthentificationModule) }, 
+  { path: '**', redirectTo: 'saccueil'}
 ];
 
 @NgModule({

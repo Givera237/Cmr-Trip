@@ -50,6 +50,11 @@
         <div class="action-buttons">
             <button type="submit" (click)="onSubmitForm()">Enregistrer</button>
         </div>
+        <form (ngSubmit)="onSubmit()">
+            <input type="file" (change)="onFileChange($event)" multiple>
+            <button type="submit">Enregistrer</button>
+          </form>
+          
     </form>
     </div>
     
