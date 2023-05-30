@@ -13,9 +13,9 @@ export class AuthentificationServices
     
     constructor(private http : HttpClient){}
     
-    addUtilisateur() : Observable<Utilisateur>
+    addUtilisateur(data :any) 
     {
-        return this.http.post<Utilisateur>(`http://localhost:3000 /api/register`, this.inscriptionForm)
+       console.log(data);
     }
 
 }

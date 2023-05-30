@@ -1,9 +1,12 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,  HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Utilisateur } from '../../models/utilisateurs';
 import { NgForm } from '@angular/forms';
+import { header } from 'express-validator';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-inscription',
@@ -14,72 +17,71 @@ export class InscriptionComponent
  {
   inscriptionForm!: FormGroup;
   user!: Utilisateur;
+  nom!: string;
+  emailRegex!: RegExp;
 
   constructor(private http : HttpClient, 
               private formbuilder : FormBuilder,
-              private router : Router){}
+              private router : Router,
+              ){}
 
-/*
-              onSubmit(data: any)
-              {
-                const obj = JSON.stringify(data);
-
-                this.http.post(`http://localhost:3000/api/register`, obj).subscribe
-                (
-                  (reponse) => 
-                  {
-                    console.log(reponse)
-                  }
-                )
-                console.log(obj);
-              }
-      */         
+       
 
   ngOnInit() : void
   {
+    this.emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
     this.inscriptionForm = this.formbuilder.group
     (
       {
-        nom: [null],
-        prenom: [null],
-        email: [null],
-        pass: [null],
-        role: [null],
+        nom: [null,[Validators.required]],
+        prenom: [null,[Validators.required]],
+        email: [null,[Validators.required]],
+        pass: [null,[Validators.required]],
+       
       }
-    ) 
-     
+    ) ;
+    
+    
+    
+  } 
+
+  onSubmit() : void
+  { 
+    const obj = this.inscriptionForm.value;
+    this.http.post('http://localhost:3000/api/register', obj, { observe: 'response' }).subscribe
+    (
+      (response: HttpResponse<any>) => 
+      {
+        if (response.status === 200) 
+        {
+          console.log(response.statusText)
+          this.router.navigateByUrl(`authentification/login`);
+        }
+        else 
+        {
+          console.log('merde combi');
+        }
+      },
+      error => 
+      {
+        console.error(error); // Afficher l'erreur à l'utilisateur
+      } 
+    ) ;  
+
   }
 
-  onSubmit(): void
-  {
-    const obje = JSON.stringify(this.inscriptionForm);
-    const obj = JSON.stringify(this.inscriptionForm);
-   
-/*
-    let jsonStr = JSON.stringify(obj, (key, value) => {
-      if (typeof value === 'object' && value !== null) {
-        if (visitedObjects.has(value)) {
-          return '[Circular]';
-        }
-        visitedObjects.add(value);
-      }
-      return value;
-    }); */
 
 
-
-
-    this.http.post(`http://localhost:3000/api/register`, obje).subscribe
-    (
-      (reponse) => 
-      {
-        console.log(obje)
-      }
-    )
-  } 
 
   onConnect() : void
   {
     this.router.navigateByUrl(`authentification/login`);
   }
  }
+
+
+function next(value: Object): void {
+  throw new Error('Function not implemented.');
+}
+

@@ -1,4 +1,3 @@
-
 <form [formGroup]="inscriptionForm">   
     <div class="form-group">
         <label for="nom">Nom</label>
@@ -17,19 +16,7 @@
         <input id="pass" type="password" formControlName="pass" >
     </div>
     <div class="action-buttons">
-        <button type="submit" (click)="onSubmit()">Enregistrer</button>
+        <button type="submit" (click)="onSubmit()" [disabled]="inscriptionForm.invalid">Enregistrer</button>
     </div>
     <h6>Vous avez déjà un compte? <a routerLink="authentification/login" (click)="onConnect()"> Connectez vous</a> </h6>
 </form>
-
-<!--
-<form  #userPost ="ngForm" (ngSubmit)="onSubmit(userPost.value)">
-
-<input type="text" name="nom" placeholder="nom" ngModel> <br><br>
-<input type="text" name="prenom" placeholder="nom" ngModel> <br><br>
-<input type="text" name="email"placeholder="nom" ngModel> <br><br>
-<input type="text" name="pass" placeholder="nom" ngModel> <br><br>
-
-<button type ="submit"> envoyer </button>
-</form>
--->

@@ -20,4 +20,9 @@ export class AuthentificationService
     {
         return this.token;
     }
+
+    addUtilisateur(data :any) 
+    {
+       console.log(data);
+    }
 }

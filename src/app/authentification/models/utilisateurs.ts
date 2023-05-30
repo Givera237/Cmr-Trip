@@ -1,7 +1,7 @@
 export class Utilisateur
 {
-    nom!: string
-    prenom!: string
-    email!: string
-    pass!: string
+    nom!: string 
+    prenom!: string 
+    email!: string 
+    pass!: string 
 }
