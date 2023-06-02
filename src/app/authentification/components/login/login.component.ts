@@ -5,6 +5,7 @@ import { AuthentificationService } from 'src/app/core/services/authentification-
 import { HttpClient,  HttpHeaders, HttpResponse } from '@angular/common/http';
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +13,8 @@ import { HttpClient,  HttpHeaders, HttpResponse } from '@angular/common/http';
 })
 export class LoginComponent 
 { 
-  loginForm!: FormGroup
+  loginForm!: FormGroup;
+  erreur!:string;
   constructor(private auth: AuthentificationService,
               private router : Router, 
               private formbuilder : FormBuilder,
@@ -20,6 +22,7 @@ export class LoginComponent
 
   ngOnInit() :void
   {
+    this.erreur = '';
     this.loginForm = this.formbuilder.group
     (
       {
@@ -51,14 +54,25 @@ export class LoginComponent
           console.log(response.statusText)
           this.router.navigateByUrl(`accueil`);
         }
-        if (response.status === 404) 
-        {
-          console.log('merde combi');
-        }
+        
       },
       error => 
       {
-        console.error(error); // Afficher l'erreur à l'utilisateur
+        
+        if (error.status === 404) 
+        {
+          this.erreur = 'Adresse deja exixtante Veuillez réessayer!!';
+          console.log(error);
+        //  console.log(error.statusText)
+          //this.router.navigateByUrl(`authentification/login`);
+        }
+        if (error.status === 500) 
+        {
+          this.erreur = 'Erreur système réessayer plus tard'
+        //  console.log(error.statusText)
+          //this.router.navigateByUrl(`authentification/login`);
+        }
+        console.error(error.body); // Afficher l'erreur à l'utilisateur
       } 
     ) ;  
 

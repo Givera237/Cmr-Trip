@@ -23,6 +23,10 @@ export class AccueilService
     {
       return this.http.get<Site>(`http://localhost:3000/api/post/${id_post}`);
     }
+    getSiteByNom(nom : string): Observable <Site>
+    {
+      return this.http.get<Site>(`http://localhost:3000/api/findall/post?titre=${nom}`);
+    }
 
     getImages(): Observable<Image[]>
     {

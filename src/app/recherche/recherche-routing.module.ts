@@ -1,11 +1,11 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { AuthentificationGuard } from "../core/guards/authentification.guard";
-import { FormulaireAjoutComponent } from "./components/formulaire-ajout/formulaire-ajout.component";
+import { AfficheRechercheComponent } from "./components/affiche-recherche/affiche-recherche.component";
+
 
 const routes : Routes =
 [
-    {path : 'ajout', component: FormulaireAjoutComponent, canActivate :[AuthentificationGuard]}
+    {path : 'affiche', component: AfficheRechercheComponent, /*canActivate :[AuthentificationGuard]*/}
 
 ]
 
@@ -25,7 +25,7 @@ const routes : Routes =
 )
 
 
-export class PublicationRoutingModule
+export class AfficheRechercheRoutingModule
 {
 
 }

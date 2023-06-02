@@ -39,7 +39,7 @@ export class SiteAccueilComponent
       this.img$.subscribe(data => 
         {
           this.images = data;
-          console.log('Yo bro voici tes objets', data);
+          
         }
         )
 

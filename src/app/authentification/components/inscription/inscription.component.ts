@@ -81,7 +81,6 @@ export class InscriptionComponent
  }
 
 
-function next(value: Object): void {
-  throw new Error('Function not implemented.');
-}
+;
+
 

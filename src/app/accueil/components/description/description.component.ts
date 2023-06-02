@@ -20,7 +20,7 @@ export class DescriptionComponent
  site!: Site;
  img$!: Observable<Image[]>
  image!: Image[];
- defile!: Defile[];
+
 
 
  constructor(private route : ActivatedRoute,
@@ -47,7 +47,6 @@ export class DescriptionComponent
    this.img$.subscribe(reponse =>
     {
       this.image = reponse;
-      console.log('Yo bro voici tes images', this.image);
     }
     
 

@@ -11,6 +11,7 @@ const routes: Routes =
   {path: 'accueil', loadChildren: () => import('./accueil/accueil.module').then (m => m.AccueilModule) },
   {path: 'publication', loadChildren: () => import('./publication/publication.module').then (m => m.PublicationModule) },
   {path: 'authentification', loadChildren: () => import('./authentification/authentification.module').then (m => m.AuthentificationModule) }, 
+  {path: 'recherche', loadChildren: () => import('./recherche/recherche.module').then (m => m.RechercheModule) }, 
   { path: '**', redirectTo: 'saccueil'}
 ];
 

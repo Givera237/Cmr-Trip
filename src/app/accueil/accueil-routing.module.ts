@@ -6,13 +6,16 @@ import { AuthentificationGuard } from "../core/guards/authentification.guard";
 import { DescriptionComponent } from "./components/description/description.component";
 import { AccueilComponent } from "./components/accueil/accueil.component";
 import { SiteListItemComponent } from "./components/site-list-item/site-list-item.component";
+import { RechercheComponent } from "./components/recherche/recherche.component";
 
 const routes: Routes =
 [
     {path: '', component: AccueilComponent },
+    {path: 'recherche/:nom', component: RechercheComponent},
     {path : 'liste', component : SiteListComponent,/* resolve: {sites : SiteResolver }*/  },
     {path : ':id', component: DescriptionComponent,  /*canActivate :[AuthentificationGuard]*/},
-    {path: 'item', component: SiteListItemComponent}
+    {path: 'item', component: SiteListItemComponent},
+    
 ]
 
 
