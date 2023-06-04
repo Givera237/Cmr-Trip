@@ -9,6 +9,7 @@ import { AccueilService } from './accueil/services/accueil.services';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ListeComponent } from './liste/liste.component';
 import { HttpStatusInterceptor } from './interceptors/auth.interceptors';
+import { MapCompComponent } from './map-comp/map-comp.component';
 
 
 
@@ -19,7 +20,8 @@ import { HttpStatusInterceptor } from './interceptors/auth.interceptors';
   declarations:
    [
     AppComponent,
-    ListeComponent
+    ListeComponent,
+    MapCompComponent
    
   ],
   imports: 

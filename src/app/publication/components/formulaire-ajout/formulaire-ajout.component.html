@@ -1,7 +1,7 @@
 <div class="class">
     <div class="form-card" style="margin-top: 120px;">
         <h2> NOUVEAU SITE </h2>
-    <form [formGroup]="sites">   
+    <form [formGroup]="siteForm">   
         <div class="form-group">
             <label for="titre">Titre</label>
             <input id="titre" type="text" formControlName="titre">
@@ -32,20 +32,24 @@
                 </select>
         </div> -->
         <div class="form-group">
+            <label for="region">Region</label><!--requetes back-->
+            <input id="region" type="text" formControlName="lib_region">
+        </div>
+        <div class="form-group">
             <label for="ville">Ville</label><!--requetes back-->
-            <input id="ville" type="text" formControlName="ville">
+            <input id="ville" type="text" formControlName="lib_ville">
         </div>
         <div class="form-group">
             <label for="type">Type</label><!--requetes back-->
-            <input id="type" type="text" formControlName="type">
+            <input id="type" type="text" formControlName="lib_type">
         </div>
         <div class="form-group">
             <label for="latitude">Latitude</label>
-            <input id="latitude" type="text" formControlName="latitude">
+            <input id="latitude" type="number" formControlName="latitude">
         </div>
         <div class="form-group">
             <label for="longitude">Longitude</label>
-            <input id="longitude" type="text" formControlName="longitude">
+            <input id="longitude" type="number" formControlName="longitude">
         </div>
         <div class="action-buttons">
             <button type="submit" (click)="onSubmitForm()">Enregistrer</button>

@@ -2,6 +2,9 @@ import { Component , OnInit } from '@angular/core';
 import { FormBuilder , FormGroup } from '@angular/forms';
 import { Observable, map } from 'rxjs';
 import { post } from '../../models/post';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.development';
 
 
 @Component({
@@ -11,40 +14,67 @@ import { post } from '../../models/post';
 })
 export class FormulaireAjoutComponent implements OnInit{
 
-  sites!: FormGroup;
+  siteForm!: FormGroup;
   sitePreview$!: Observable<post>;
   imagesInput!: any;
   //event !: any
 
   
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder,
+              private http : HttpClient,
+              private router : Router)
+               { }
 
     ngOnInit(): void {
-      this.sites = this.formBuilder.group({
+      this.siteForm = this.formBuilder.group({
           titre: [null],
           contenu: [null],
           //imageUrl: [null],
           adresse: [null],
-          type: [null],
-         // region: [null],
-          ville: [null],
+          lib_type: [null],
+          lib_region: [null],
+          lib_ville: [null],
           //categorie: [null],
           latitude: [null],
           longitude: [null]
       });
      /* this.sitePreview$ = this.sites.valueChanges;*/
-      this.sitePreview$ = this.sites.valueChanges.pipe(
+      this.sitePreview$ = this.siteForm.valueChanges.pipe(
         map(formValue =>({
           ...formValue,
           createDate: new Date()
           
         }))
     );
+    
   }
   onSubmitForm() 
   {
-    console.log(this.sites.value);
+    
+    const obj = this.siteForm.value;
+    const obje = JSON.stringify(obj);
+    console.log(obje);
+    const id = environment.id_utilisateur;
+    this.http.post(`http://localhost:3000/api/post/${id}`, obj, { observe: 'response' }).subscribe
+    (
+      (response: HttpResponse<any>) => 
+      {
+        if (response.status === 200) 
+        {
+          console.log(response.statusText)
+          console.log('Post bien envoyé')
+        }
+        else 
+        {
+          console.log('merde combi');
+        }
+      },
+      error => 
+      {
+        console.error(error); // Afficher l'erreur à l'utilisateur
+      }
+    )
   }
 
   onFileChange(event : any) 

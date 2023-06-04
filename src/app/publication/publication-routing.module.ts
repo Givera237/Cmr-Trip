@@ -5,7 +5,7 @@ import { FormulaireAjoutComponent } from "./components/formulaire-ajout/formulai
 
 const routes : Routes =
 [
-    {path : 'ajout', component: FormulaireAjoutComponent, canActivate :[AuthentificationGuard]}
+    {path : 'ajout', component: FormulaireAjoutComponent/*, canActivate :[AuthentificationGuard]*/}
 
 ]
 

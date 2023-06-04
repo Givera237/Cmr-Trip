@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthentificationService } from 'src/app/core/services/authentification-service';
 import { HttpClient,  HttpHeaders, HttpResponse } from '@angular/common/http';
+import { environment } from 'src/environments/environment.development';
 
 
 
@@ -34,7 +35,7 @@ export class LoginComponent
   onLogin() : void
   {
     this.auth.login();
-    this.router.navigateByUrl('accueil/description');
+    this.router.navigateByUrl('publication/ajout');
   }
 
   onConnect()
@@ -45,14 +46,16 @@ export class LoginComponent
   onSubmit()
   {
     const obj = this.loginForm.value;
+    console.log(obj);
     this.http.post('http://localhost:3000/api/login', obj, { observe: 'response' }).subscribe
     (
       (response: HttpResponse<any>) => 
       {
         if (response.status === 200) 
         {
-          console.log(response.statusText)
-          this.router.navigateByUrl(`accueil`);
+          console.log(response.body.id_utilisateur);
+          environment.id_utilisateur = response.body.id_utilisateur;
+          this.router.navigateByUrl(`publication/ajout`);
         }
         
       },
